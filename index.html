@@ -23,7 +23,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body { font-family: var(--font-main); background: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-
 .bg-shapes { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
 .bg-shape { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.15; animation: floatShape 20s ease-in-out infinite; }
 .bg-shape:nth-child(1) { width: 400px; height: 400px; background: linear-gradient(135deg, var(--accent), #f39c12); top: -100px; left: -100px; animation-delay: 0s; animation-duration: 25s; }
@@ -32,7 +31,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .bg-shape:nth-child(4) { width: 200px; height: 200px; background: linear-gradient(135deg, #fd79a8, #e84393); top: 20%; left: 60%; animation-delay: -15s; animation-duration: 28s; opacity: 0.08; }
 @keyframes floatShape { 0%, 100% { transform: translate(0, 0) scale(1); } 25% { transform: translate(50px, -30px) scale(1.1); } 50% { transform: translate(-30px, 50px) scale(0.95); } 75% { transform: translate(30px, 30px) scale(1.05); } }
 .bg-grid { position: fixed; inset: 0; z-index: -1; pointer-events: none; background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); background-size: 60px 60px; }
-
 .navbar { position: fixed; top: 0; left: 0; right: 0; height: 64px; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; transition: box-shadow var(--transition-fast); }
 .navbar.scrolled { box-shadow: var(--shadow); }
 .nav-brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; }
@@ -51,12 +49,10 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .mobile-menu .nav-item { display: block; padding: 14px 16px; margin-bottom: 4px; border-radius: 12px; font-size: 1rem; }
 .menu-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 998; opacity: 0; transition: opacity var(--transition-normal); }
 .menu-overlay.open { display: block; opacity: 1; }
-
 .main-content { margin-top: 64px; min-height: calc(100vh - 64px); position: relative; }
 .section { display: none; padding: 40px; max-width: 1000px; margin: 0 auto; animation: fadeInUp 0.5s ease forwards; }
 .section.active { display: block; }
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
 .hero { display: flex; align-items: center; gap: 48px; padding: 60px 40px; min-height: calc(100vh - 64px); }
 .avatar-wrapper { position: relative; width: 180px; height: 180px; min-width: 180px; border-radius: 50%; overflow: hidden; box-shadow: var(--shadow); border: 4px solid #fff; background: linear-gradient(135deg, var(--secondary) 0%, #a8e6cf 100%); display: flex; align-items: center; justify-content: center; }
 .avatar-wrapper::before { content: "WJY"; font-size: 2.5rem; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 2px; }
@@ -78,12 +74,10 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .btn-primary:hover { background: #d35400; transform: translateY(-2px); box-shadow: 0 6px 24px rgba(230,126,34,0.4); }
 .btn-outline { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
 .btn-outline:hover { background: var(--accent); color: #fff; }
-
 .section-header { text-align: center; margin-bottom: 40px; }
 .section-header h2 { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-bottom: 8px; position: relative; display: inline-block; }
 .section-header h2::after { content: ""; position: absolute; bottom: -6px; left: 50%; transform: translateX(-50%); width: 40px; height: 3px; background: var(--accent); border-radius: 2px; }
 .section-header p { font-size: 0.95rem; color: var(--text-light); margin-top: 14px; }
-
 .timeline { position: relative; padding-left: 32px; }
 .timeline::before { content: ""; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--accent) 0%, var(--secondary) 100%); border-radius: 1px; }
 .timeline-item { position: relative; margin-bottom: 32px; padding: 24px 28px; background: var(--card-bg); border-radius: 16px; box-shadow: var(--shadow); transition: all var(--transition-fast); }
@@ -98,7 +92,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .timeline-desc li { position: relative; padding-left: 18px; margin-bottom: 6px; }
 .timeline-desc li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
 .highlight { color: var(--accent); font-weight: 600; }
-
 .project-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .project-card { background: var(--card-bg); border-radius: 16px; padding: 28px; box-shadow: var(--shadow); transition: all var(--transition-fast); border-left: 4px solid var(--accent); position: relative; overflow: hidden; }
 .project-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
@@ -109,7 +102,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .project-desc { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; margin-bottom: 10px; }
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .project-tag { font-size: 0.75rem; color: var(--text-light); background: var(--bg); padding: 3px 10px; border-radius: 8px; }
-
 .edu-card { background: var(--card-bg); border-radius: 16px; padding: 32px 40px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 32px; max-width: 700px; margin: 0 auto; transition: all var(--transition-fast); }
 .edu-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
 .edu-icon { width: 72px; height: 72px; min-width: 72px; background: linear-gradient(135deg, var(--secondary) 0%, #a8e6cf 100%); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
@@ -122,7 +114,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .course-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .course-tag { font-size: 0.85rem; color: var(--text-light); background: var(--card-bg); padding: 6px 14px; border-radius: 20px; border: 1px solid var(--border); transition: all var(--transition-fast); }
 .course-tag:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
 .skills-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
 .skill-category { background: var(--card-bg); border-radius: 16px; padding: 28px; box-shadow: var(--shadow); transition: all var(--transition-fast); }
 .skill-category:hover { box-shadow: var(--shadow-hover); }
@@ -136,16 +127,13 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .skill-bar { height: 6px; background: var(--bg); border-radius: 3px; overflow: hidden; position: relative; }
 .skill-bar-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%); transition: width 1s ease; width: 0; }
 .skill-bar-fill.animate { width: var(--fill-width); }
-
 .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .cert-card { background: var(--card-bg); border-radius: 16px; padding: 28px 20px; text-align: center; box-shadow: var(--shadow); transition: all var(--transition-fast); border-top: 3px solid transparent; }
 .cert-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); border-top-color: var(--accent); }
 .cert-icon { font-size: 2.2rem; margin-bottom: 12px; display: block; }
 .cert-name { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
 .cert-desc { font-size: 0.85rem; color: var(--text-light); }
-
 .footer { text-align: center; padding: 32px 20px; color: #bbb; font-size: 0.85rem; border-top: 1px solid var(--border); margin-top: 40px; }
-
 @media (max-width: 768px) {
 .navbar { padding: 0 20px; height: 56px; }
 .nav-menu { display: none; }
@@ -175,13 +163,11 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .contact-chip { font-size: 0.8rem; padding: 4px 10px; }
 .btn { padding: 10px 20px; font-size: 0.85rem; }
 }
-
 /* 作品集标签 */
 .portfolio-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; justify-content: center; }
 .portfolio-tab { padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; color: var(--text-light); background: var(--card-bg); border: 1.5px solid var(--border); cursor: pointer; transition: all var(--transition-fast); user-select: none; }
 .portfolio-tab:hover { border-color: var(--accent); color: var(--accent); }
 .portfolio-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 2px 12px rgba(230,126,34,0.3); }
-
 .portfolio-category { margin-bottom: 32px; }
 .cat-header { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
 .cat-icon { font-size: 1.3rem; }
@@ -192,7 +178,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .cat-empty .empty-title { font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
 .cat-empty .empty-desc { font-size: 0.85rem; color: var(--text-light); }
 .portfolio-category.hidden { display: none; }
-
 /* 作品网格 */
 .portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .portfolio-card { background: var(--card-bg); border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); transition: all var(--transition-fast); position: relative; }
@@ -208,7 +193,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .portfolio-btn { flex: 1; padding: 8px 0; border-radius: 10px; font-size: 0.85rem; font-weight: 600; cursor: pointer; border: none; transition: all var(--transition-fast); text-align: center; }
 .portfolio-btn.play { background: var(--accent); color: #fff; }
 .portfolio-btn.play:hover { background: #d35400; }
-
 /* 全屏弹层 */
 .video-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 2000; align-items: center; justify-content: center; padding: 20px; }
 .video-modal.open { display: flex; }
@@ -216,7 +200,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 .video-modal img { max-width: 100%; max-height: 90vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
 .video-modal-close { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,0.15); color: #fff; font-size: 1.5rem; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background var(--transition-fast); }
 .video-modal-close:hover { background: rgba(255,255,255,0.3); }
-
 /* 加载提示 */
 .loading-tip { text-align: center; padding: 40px; color: var(--text-light); font-size: 0.9rem; }
 .loading-tip .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s linear infinite; margin-right: 8px; vertical-align: middle; }
@@ -224,9 +207,9 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </style>
 <base target="_blank">
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
-
 <div class="bg-shapes">
 <div class="bg-shape"></div>
 <div class="bg-shape"></div>
@@ -234,7 +217,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <div class="bg-shape"></div>
 </div>
 <div class="bg-grid"></div>
-
 <nav class="navbar" id="navbar">
 <div class="nav-brand">王<span>璟妍</span></div>
 <ul class="nav-menu" id="navMenu">
@@ -251,7 +233,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <span></span>
 </div>
 </nav>
-
 <div class="menu-overlay" id="menuOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
 <div class="nav-item active" data-section="home">首页</div>
@@ -261,9 +242,7 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <div class="nav-item" data-section="skills">技能特长</div>
 <div class="nav-item" data-section="certs">证书/荣誉</div>
 </div>
-
 <main class="main-content">
-
 <section class="section active" id="home">
 <div class="hero">
 <div class="avatar-wrapper" id="avatarWrapper">
@@ -291,7 +270,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </div>
 </div>
 </section>
-
 <section class="section" id="experience">
 <div class="section-header">
 <h2>工作/项目经历</h2>
@@ -302,13 +280,13 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <div class="timeline-header">
 <div>
 <div class="timeline-company">武汉新新传媒集团有限公司</div>
-<div class="timeline-role">内容编辑 / 新媒体运营</div>
+<div class="timeline-role">内容编辑 </div>
 </div>
 <span class="timeline-date">2023.04 --- 2025.07</span>
 </div>
 <div class="timeline-desc">
 <ul>
-<li><span class="highlight">视频内容策划与制作：</span>深度参与图书及文创产品的视频脚本撰写、剪辑方案策划、内容审核与多平台发布推广，配合运营团队完成抖音、小红书等平台的内容投放。</li>
+<li><span class="highlight">视频内容策划与制作：</span>深度参与图书及文创产品的视频脚本撰写、剪辑方案策划、内容审核与多平台发布推广，配合运营团队完成抖音、小红书等平台的内容制作。</li>
 <li><span class="highlight">数据驱动的内容优化：</span>主导多次图书市场调研，通过分析读者偏好、竞品动态及平台投放数据，优化内容结构与产品定位；所参与项目多款产品进入平台热销榜单，年销量突破30万册。</li>
 <li><span class="highlight">多版本对比优化：</span>针对同一选题产出多套差异化内容版本，通过数据反馈筛选最优方案，具备高频迭代与快速响应能力。</li>
 <li><span class="highlight">全流程内容运营：</span>负责美术类图书从市场调研、选题策划、内容编校到排版设计、印刷监制及上市推广的全流程管理，年均参与12+册图书内容制作。</li>
@@ -320,9 +298,9 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <div class="timeline-header">
 <div>
 <div class="timeline-company">源河教育科技（法国里昂）</div>
-<div class="timeline-role">AI内容测试（兼职）</div>
+<div class="timeline-role">AI内容测试</div>
 </div>
-<span class="timeline-date">2025.08 --- 2026.02</span>
+<span class="timeline-date">2025.09 --- 2026.03</span>
 </div>
 <div class="timeline-desc">
 <ul>
@@ -332,7 +310,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </div>
 </div>
 </div>
-
 <div style="margin-top: 40px;">
 <div class="section-header" style="margin-bottom: 24px;">
 <h2 style="font-size: 1.4rem;">重点项目</h2>
@@ -398,7 +375,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </div>
 </div>
 </section>
-
 <section class="section" id="education">
 <div class="section-header">
 <h2>教育背景</h2>
@@ -429,7 +405,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </p>
 </div>
 </section>
-
 <section class="section" id="skills">
 <div class="section-header">
 <h2>技能特长</h2>
@@ -606,17 +581,16 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </div>
 </div>
 </section>
-
 <section class="section" id="portfolio">
 <div class="section-header">
 <h2>作品集</h2>
-<p>剪辑作品与设计作品分类展示</p>
+<p>剪辑作品、设计作品与AI作品分类展示</p>
 </div>
 <div class="portfolio-tabs" id="portfolioTabs">
 <div class="portfolio-tab active" data-category="edit">剪辑作品</div>
 <div class="portfolio-tab" data-category="design">设计作品</div>
+<div class="portfolio-tab" data-category="ai">AI作品</div>
 </div>
-
 <div class="portfolio-category" id="cat-edit">
 <div class="cat-header">
 <span class="cat-icon">🎬</span>
@@ -632,7 +606,6 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <div class="empty-desc">请将作品视频文件放入 works/edit/ 文件夹后重新部署</div>
 </div>
 </div>
-
 <div class="portfolio-category" id="cat-design">
 <div class="cat-header">
 <span class="cat-icon">🎨</span>
@@ -648,8 +621,22 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 <div class="empty-desc">请将设计图片文件放入 works/design/ 文件夹后重新部署</div>
 </div>
 </div>
+<div class="portfolio-category" id="cat-ai">
+<div class="cat-header">
+<span class="cat-icon">🤖</span>
+<span class="cat-title">AI作品</span>
+<span class="cat-count" id="count-ai">0</span>
+</div>
+<div class="portfolio-grid" id="grid-ai">
+<div class="loading-tip" id="loading-ai"><span class="spinner"></span>正在加载作品...</div>
+</div>
+<div class="cat-empty" id="empty-ai" style="display:none;">
+<div class="empty-icon">🤖</div>
+<div class="empty-title">暂无AI作品</div>
+<div class="empty-desc">请将AI作品文件放入 works/ai/ 文件夹后重新部署</div>
+</div>
+</div>
 </section>
-
 <section class="section" id="certs">
 <div class="section-header">
 <h2>证书与荣誉</h2>
@@ -696,23 +683,18 @@ body { font-family: var(--font-main); background: var(--bg); color: var(--text);
 </div>
 </div>
 </section>
-
 </main>
-
 <footer class="footer">
 <p>© 2026 王璟妍 · 个人简历 · 期待与您合作</p>
 </footer>
-
 <!-- 全屏弹层 -->
 <div class="video-modal" id="videoModal">
 <video controls id="modalVideo" style="display:none;"></video>
 <img id="modalImage" style="display:none;" alt="作品">
 <button class="video-modal-close" onclick="closeVideoModal()">✕</button>
 </div>
-
 <script>
 (function() {
-
 /* ============================================================
 1. 头像加载
 ============================================================ */
@@ -729,7 +711,6 @@ img.src = formats[index];
 }
 tryNext();
 }
-
 /* ============================================================
 2. 栏目切换
 ============================================================ */
@@ -750,7 +731,6 @@ if (sectionId === 'skills') setTimeout(animateSkillBars, 100);
 if (sectionId === 'portfolio') loadPortfolio();
 }
 window.switchSection = switchSection;
-
 /* ============================================================
 3. 导航事件
 ============================================================ */
@@ -759,7 +739,6 @@ document.querySelectorAll('.nav-item').forEach(function(item) {
 item.addEventListener('click', function() { switchSection(this.dataset.section); });
 });
 }
-
 /* ============================================================
 4. 移动端菜单
 ============================================================ */
@@ -770,7 +749,6 @@ function openMobileMenu() { hamburger.classList.add('active'); mobileMenu.classL
 function closeMobileMenu() { hamburger.classList.remove('active'); mobileMenu.classList.remove('open'); menuOverlay.classList.remove('open'); document.body.style.overflow = ''; }
 hamburger.addEventListener('click', function() { if (mobileMenu.classList.contains('open')) closeMobileMenu(); else openMobileMenu(); });
 menuOverlay.addEventListener('click', closeMobileMenu);
-
 /* ============================================================
 5. 导航栏滚动阴影
 ============================================================ */
@@ -779,7 +757,6 @@ window.addEventListener('scroll', function() {
 if (window.scrollY > 10) navbar.classList.add('scrolled');
 else navbar.classList.remove('scrolled');
 });
-
 /* ============================================================
 6. 技能进度条动画
 ============================================================ */
@@ -790,28 +767,24 @@ void bar.offsetWidth;
 bar.classList.add('animate');
 });
 }
-
 /* ============================================================
 7. 作品集 - 自动扫描 works 文件夹
 ============================================================ */
 const CATEGORIES = {
 edit: { name: '剪辑作品', grid: 'grid-edit', empty: 'empty-edit', count: 'count-edit', loading: 'loading-edit' },
-design: { name: '设计作品', grid: 'grid-design', empty: 'empty-design', count: 'count-design', loading: 'loading-design' }
+design: { name: '设计作品', grid: 'grid-design', empty: 'empty-design', count: 'count-design', loading: 'loading-design' },
+ai: { name: 'AI作品', grid: 'grid-ai', empty: 'empty-ai', count: 'count-ai', loading: 'loading-ai' }
 };
-
 const VIDEO_EXTS = ['.mp4', '.webm', '.mov', '.avi', '.mkv'];
 const IMAGE_EXTS = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp'];
-
 let currentFilter = 'edit';
 let hasLoaded = false;
-
 function getFileType(filename) {
 const lower = filename.toLowerCase();
 if (VIDEO_EXTS.some(function(ext) { return lower.endsWith(ext); })) return 'video';
 if (IMAGE_EXTS.some(function(ext) { return lower.endsWith(ext); })) return 'image';
 return null;
 }
-
 function getBaseUrl() {
 // 自动检测当前部署路径
 const path = window.location.pathname;
@@ -825,17 +798,14 @@ return window.location.origin + path.substring(0, path.lastIndexOf('/') + 1);
 }
 return window.location.origin + '/';
 }
-
 function getRepoInfo() {
 // 从 GitHub Pages URL 提取用户名和仓库名
 // 格式: https://用户名.github.io/仓库名/
 const hostname = window.location.hostname;
 const path = window.location.pathname;
-
 if (hostname === 'localhost' || hostname === '127.0.0.1') {
 return null; // 本地环境，无法使用 GitHub API
 }
-
 if (hostname.endsWith('.github.io')) {
 const username = hostname.split('.')[0];
 // GitHub Pages 用户站点: username.github.io/ → repo = username.github.io
@@ -846,29 +816,22 @@ return { owner: username, repo: parts[0], isProject: true };
 }
 return { owner: username, repo: username + '.github.io', isProject: false };
 }
-
 return null;
 }
-
 function createPortfolioCard(fileUrl, category, filename) {
 const cfg = CATEGORIES[category];
 const fileType = getFileType(filename);
 if (!fileType) return null; // 不支持的文件类型
-
 const isVideo = fileType === 'video';
 const displayName = filename.replace(/\.[^/.]+$/, ''); // 去掉扩展名
-
 const card = document.createElement('div');
 card.className = 'portfolio-card';
-
 const mediaHtml = isVideo
 ? `<div class="video-wrapper"><video src="${fileUrl}" preload="metadata" muted playsinline></video></div>`
 : `<div class="video-wrapper" style="background:#f5f5f5;"><img src="${fileUrl}" alt="${displayName}" style="width:100%;height:auto;object-fit:contain;max-height:400px;display:block;"></div>`;
-
 const playBtn = isVideo
 ? `<button class="portfolio-btn play" onclick="playWork('${fileUrl}', 'video')">▶ 播放</button>`
 : `<button class="portfolio-btn play" onclick="playWork('${fileUrl}', 'image')">🔍 查看</button>`;
-
 card.innerHTML = `
 ${mediaHtml}
 <div class="portfolio-info">
@@ -882,10 +845,8 @@ ${playBtn}
 </div>
 </div>
 `;
-
 return card;
 }
-
 function updateCategoryState() {
 Object.keys(CATEGORIES).forEach(function(cat) {
 const cfg = CATEGORIES[cat];
@@ -893,27 +854,22 @@ const grid = document.getElementById(cfg.grid);
 const cards = grid.querySelectorAll('.portfolio-card');
 const count = cards.length;
 document.getElementById(cfg.count).textContent = count;
-
 // 隐藏加载提示
 const loading = document.getElementById(cfg.loading);
 if (loading) loading.style.display = 'none';
-
 // 显示/隐藏空状态
 const empty = document.getElementById(cfg.empty);
 if (empty) empty.style.display = count > 0 ? 'none' : 'block';
-
 // 显示/隐藏网格
 grid.style.display = count > 0 ? 'grid' : 'none';
 });
 }
-
 function applyFilter(filter) {
 currentFilter = filter;
 document.querySelectorAll('.portfolio-category').forEach(function(cat) { cat.classList.add('hidden'); });
 const target = document.getElementById('cat-' + filter);
 if (target) { target.classList.remove('hidden'); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
 }
-
 // 方法1: 通过 GitHub API 获取仓库文件列表（推荐，自动识别）
 async function scanViaGitHubAPI(repoInfo, category) {
 const apiUrl = `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}/contents/works/${category}`;
@@ -932,7 +888,6 @@ console.log('GitHub API 请求失败：', e);
 return [];
 }
 }
-
 // 方法2: 通过目录索引文件获取（备选方案）
 async function scanViaIndexFile(baseUrl, category) {
 try {
@@ -945,7 +900,6 @@ return data.files || [];
 } catch (e) {}
 return [];
 }
-
 // 方法3: 通过预定义清单获取（最可靠，需要手动创建清单文件）
 async function scanViaManifest(baseUrl) {
 try {
@@ -957,21 +911,17 @@ return data.works || [];
 } catch (e) {}
 return null;
 }
-
 async function loadPortfolio() {
 if (hasLoaded) return;
 hasLoaded = true;
-
 const baseUrl = getBaseUrl();
 const repoInfo = getRepoInfo();
-
 // 清空网格（保留加载提示）
 document.getElementById('grid-edit').innerHTML = '<div class="loading-tip" id="loading-edit"><span class="spinner"></span>正在加载作品...</div>';
 document.getElementById('grid-design').innerHTML = '<div class="loading-tip" id="loading-design"><span class="spinner"></span>正在加载作品...</div>';
-
+document.getElementById('grid-ai').innerHTML = '<div class="loading-tip" id="loading-ai"><span class="spinner"></span>正在加载作品...</div>';
 // 尝试多种方法获取作品列表
 let works = [];
-
 // 方法1: 尝试 manifest.json（最可靠）
 const manifest = await scanViaManifest(baseUrl);
 if (manifest) {
@@ -980,19 +930,21 @@ works = manifest;
 // 方法2: GitHub API 自动扫描
 const editFiles = await scanViaGitHubAPI(repoInfo, 'edit');
 const designFiles = await scanViaGitHubAPI(repoInfo, 'design');
-
+const aiFiles = await scanViaGitHubAPI(repoInfo, 'ai');
 editFiles.forEach(function(f) {
 works.push({ file: f.name, category: 'edit', name: f.name.replace(/\.[^/.]+$/, ''), url: f.url });
 });
 designFiles.forEach(function(f) {
 works.push({ file: f.name, category: 'design', name: f.name.replace(/\.[^/.]+$/, ''), url: f.url });
 });
+aiFiles.forEach(function(f) {
+works.push({ file: f.name, category: 'ai', name: f.name.replace(/\.[^/.]+$/, ''), url: f.url });
+});
 } else {
 // 本地环境：尝试通过已知文件名猜测
 // 这里可以手动列出一些常见文件名尝试
 console.log('本地环境，请使用 manifest.json 或手动配置 WORKS_CONFIG');
 }
-
 // 渲染作品
 works.forEach(function(work) {
 const fileUrl = work.url || (baseUrl + 'works/' + work.category + '/' + work.file);
@@ -1002,11 +954,9 @@ const grid = document.getElementById(CATEGORIES[work.category].grid);
 if (grid) grid.appendChild(card);
 }
 });
-
 updateCategoryState();
 applyFilter('edit');
 }
-
 // 标签切换
 document.querySelectorAll('.portfolio-tab').forEach(function(tab) {
 tab.addEventListener('click', function() {
@@ -1015,13 +965,11 @@ this.classList.add('active');
 applyFilter(this.dataset.category);
 });
 });
-
 // 播放/查看作品
 window.playWork = function(url, type) {
 const modal = document.getElementById('videoModal');
 const modalVideo = document.getElementById('modalVideo');
 const modalImage = document.getElementById('modalImage');
-
 if (type === 'video') {
 if (modalImage) modalImage.style.display = 'none';
 if (modalVideo) { modalVideo.style.display = 'block'; modalVideo.src = url; modalVideo.play(); }
@@ -1029,11 +977,9 @@ if (modalVideo) { modalVideo.style.display = 'block'; modalVideo.src = url; moda
 if (modalVideo) { modalVideo.pause(); modalVideo.style.display = 'none'; }
 if (modalImage) { modalImage.style.display = 'block'; modalImage.src = url; }
 }
-
 modal.classList.add('open');
 document.body.style.overflow = 'hidden';
 };
-
 window.closeVideoModal = function() {
 const modal = document.getElementById('videoModal');
 const modalVideo = document.getElementById('modalVideo');
@@ -1041,12 +987,10 @@ if (modalVideo) { modalVideo.pause(); modalVideo.src = ''; }
 modal.classList.remove('open');
 document.body.style.overflow = '';
 };
-
 // 点击弹层背景关闭
 document.getElementById('videoModal').addEventListener('click', function(e) {
 if (e.target === this) closeVideoModal();
 });
-
 /* ============================================================
 8. 初始化
 ============================================================ */
@@ -1054,7 +998,6 @@ document.addEventListener('DOMContentLoaded', function() {
 loadAvatar();
 bindNavEvents();
 });
-
 })();
 </script>
 </body>
